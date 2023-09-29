@@ -1,0 +1,50 @@
+﻿@page
+@model De_Kast.Pages.Personeel.EditModel
+
+@{
+    ViewData["Title"] = "Aanpassen";
+}
+
+<h1>Pas aan</h1>
+
+<h4>Personeelslid</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Personeelslid.ID" />
+            <div class="form-group">
+                <label asp-for="Personeelslid.Voornaam" class="control-label"></label>
+                <input asp-for="Personeelslid.Voornaam" class="form-control" />
+                <span asp-validation-for="Personeelslid.Voornaam" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Personeelslid.Achternaam" class="control-label"></label>
+                <input asp-for="Personeelslid.Achternaam" class="form-control" />
+                <span asp-validation-for="Personeelslid.Achternaam" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Personeelslid.Functie" class="control-label"></label>
+                <input asp-for="Personeelslid.Functie" class="form-control" />
+                <span asp-validation-for="Personeelslid.Functie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Personeelslid.Telefoonnummer" class="control-label"></label>
+                <input asp-for="Personeelslid.Telefoonnummer" class="form-control" />
+                <span asp-validation-for="Personeelslid.Telefoonnummer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Opslaan" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Terug naar lijst</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

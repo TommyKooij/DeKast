@@ -1,0 +1,54 @@
+﻿@page
+@model De_Kast.Pages.Personeel.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Personeel</h1>
+
+<p>
+    <a asp-page="Create">Maak nieuwe item aan</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Personeelslid[0].Voornaam)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Personeelslid[0].Achternaam)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Personeelslid[0].Functie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Personeelslid[0].Telefoonnummer)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Personeelslid) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Voornaam)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Achternaam)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Functie)
+            </td>
+            <td>
+                06-@Html.DisplayFor(modelItem => item.Telefoonnummer)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Pas aan</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Gooi weg</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

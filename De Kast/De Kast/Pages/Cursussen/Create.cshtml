@@ -1,0 +1,49 @@
+﻿@page
+@model De_Kast.Pages.Cursussen.CreateModel
+
+@{
+    ViewData["Title"] = "Aanmaken";
+}
+
+<h1>Maak aan</h1>
+
+<h4>Cursus</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Cursus.Naam" class="control-label"></label>
+                <input asp-for="Cursus.Naam" class="form-control" />
+                <span asp-validation-for="Cursus.Naam" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cursus.Dag" class="control-label"></label>
+                <input asp-for="Cursus.Dag" class="form-control" />
+                <span asp-validation-for="Cursus.Dag" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cursus.BeginTijd" class="control-label"></label>
+                <input asp-for="Cursus.BeginTijd" class="form-control" />
+                <span asp-validation-for="Cursus.BeginTijd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cursus.EindTijd" class="control-label"></label>
+                <input asp-for="Cursus.EindTijd" class="form-control" />
+                <span asp-validation-for="Cursus.EindTijd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Maak aan" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Terug naar lijst</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

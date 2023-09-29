@@ -1,0 +1,46 @@
+﻿@page
+@model De_Kast.Pages.Personeel.DeleteModel
+
+@{
+    ViewData["Title"] = "Weggooien";
+}
+
+<h1>Gooi weg</h1>
+
+<h3>Weet je zeker dat je dit weg wilt gooien?</h3>
+<div>
+    <h4>Personeelslid</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Personeelslid.Voornaam)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Personeelslid.Voornaam)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Personeelslid.Achternaam)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Personeelslid.Achternaam)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Personeelslid.Functie)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Personeelslid.Functie)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Personeelslid.Telefoonnummer)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Personeelslid.Telefoonnummer)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Personeelslid.ID" />
+        <input type="submit" value="Gooi weg" class="btn btn-danger" /> |
+        <a asp-page="./Index">Terug naar lijst</a>
+    </form>
+</div>

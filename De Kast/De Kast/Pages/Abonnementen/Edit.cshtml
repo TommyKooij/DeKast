@@ -1,0 +1,46 @@
+﻿@page
+@model De_Kast.Pages.Abonnementen.EditModel
+
+@{
+    ViewData["Title"] = "Aanpassen";
+}
+
+<h1>Pas aan</h1>
+
+<h4>Abonnement</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Abonnement.ID" />
+            <div class="form-group">
+                <label asp-for="Abonnement.Type" class="control-label"></label>
+                <input asp-for="Abonnement.Type" class="form-control" />
+                <span asp-validation-for="Abonnement.Type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Abonnement.Prijs" class="control-label"></label>
+                €
+                <input asp-for="Abonnement.Prijs" class="form-control" />
+                <span asp-validation-for="Abonnement.Prijs" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Abonnement.Aangeschaft" /> @Html.DisplayNameFor(model => model.Abonnement.Aangeschaft)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Opslaan" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Terug naar lijst</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

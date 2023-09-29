@@ -1,0 +1,38 @@
+﻿@page
+@model De_Kast.Pages.Abonnementen.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Abonnement</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Abonnement.Type)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Abonnement.Type)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Abonnement.Prijs)
+        </dt>
+        <dd class="col-sm-10">
+            €
+            @Html.DisplayFor(model => model.Abonnement.Prijs)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Abonnement.Aangeschaft)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Abonnement.Aangeschaft)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Abonnement?.ID">Pas aan</a> |
+    <a asp-page="./Index">Terug naar lijst</a>
+</div>

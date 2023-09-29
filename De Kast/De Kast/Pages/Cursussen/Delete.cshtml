@@ -1,0 +1,46 @@
+﻿@page
+@model De_Kast.Pages.Cursussen.DeleteModel
+
+@{
+    ViewData["Title"] = "Weggooien";
+}
+
+<h1>Gooi weg</h1>
+
+<h3>Weet je zeker dat je dit weg wilt gooien?</h3>
+<div>
+    <h4>Cursus</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cursus.Naam)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Cursus.Naam)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cursus.Dag)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Cursus.Dag)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cursus.BeginTijd)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Cursus.BeginTijd)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cursus.EindTijd)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Cursus.EindTijd)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Cursus.ID" />
+        <input type="submit" value="Gooi weg" class="btn btn-danger" /> |
+        <a asp-page="./Index">Terug naar lijst</a>
+    </form>
+</div>

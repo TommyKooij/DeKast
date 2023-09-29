@@ -1,0 +1,49 @@
+﻿@page
+@model De_Kast.Pages.Abonnementen.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Abonnementen</h1>
+
+<p>
+    <a asp-page="Create">Maak nieuwe item aan</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Abonnement[0].Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Abonnement[0].Prijs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Abonnement[0].Aangeschaft)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Abonnement) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                €
+                    @Html.DisplayFor(modelItem => item.Prijs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Aangeschaft)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Pas aan</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Gooi weg</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
